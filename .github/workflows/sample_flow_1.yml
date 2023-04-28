@@ -11,14 +11,14 @@ jobs:
   echo-input:
     runs-on: ubuntu-latest
     steps:
-      - name: Get Value
+      - name: Get name
         run: |
           echo ${{ github.event.inputs.name }}
 
   checkout-and-ls:
     runs-on: ubuntu-latest
     steps:
-      - name: Get Value
+      - name: Get source and exec ls command
       - uses: actions/checkout@v2
         run: |
           ls -al
