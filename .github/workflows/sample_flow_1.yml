@@ -1,0 +1,17 @@
+name: Manual Workflow Sample 1
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: 'input your name.'
+        default: 'hoge'
+        required: true
+      age:
+        description: 'input your age'
+        default: '12'
+
+....
+      - name: Get Value
+        run: |
+          echo ${{ github.event.inputs.name }}
+          echo ${{ github.event.inputs.age }}
