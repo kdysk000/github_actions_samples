@@ -6,15 +6,21 @@ on:
         description: 'input your name.'
         default: 'hoge'
         required: true
-      age:
-        description: 'input your age'
-        default: '12'
 
 jobs:
-  test_job:
+  echo-input:
     runs-on: ubuntu-latest
     steps:
       - name: Get Value
         run: |
           echo ${{ github.event.inputs.name }}
-          echo ${{ github.event.inputs.age }}
+
+  checkout-and-ls:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get Value
+      - uses: actions/checkout@v2
+        run: |
+          ls -al
+          cd .github/workflows/
+          ls -al
