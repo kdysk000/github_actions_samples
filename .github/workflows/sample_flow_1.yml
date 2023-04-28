@@ -18,8 +18,10 @@ jobs:
   checkout-and-ls:
     runs-on: ubuntu-latest
     steps:
-      - name: Get source and exec ls command
+      - name: Get source
         uses: actions/checkout@v2
+
+      - name: Exec ls command
         run: |
           ls -al
           cd .github/workflows/
