@@ -10,7 +10,10 @@ on:
         description: 'input your age'
         default: '12'
 
-....
+jobs:
+  test_job:
+    runs_on: ubuntu-latest
+    steps:
       - name: Get Value
         run: |
           echo ${{ github.event.inputs.name }}
