@@ -6,8 +6,8 @@ on:
         description: 'input your name.'
         default: 'hoge'
         required: true
-    env:
-      TEST1: ${{secrets.SECRET_TEST}}  #secretの取得. TEST1のスコープは全体
+env:
+  TEST1: ${{secrets.SECRET_TEST}}  #secretの取得. TEST1のスコープは全体
 
 jobs:
   echo-input:
