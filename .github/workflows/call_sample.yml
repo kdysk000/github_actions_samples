@@ -4,14 +4,8 @@ on:
 
 jobs:
   call-workflow:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Get source
-        uses: actions/checkout@v2
-
-      - name: call
-        uses: kdysk000/github_actions_samples/.github/workflows/inputs_sample.yml@main
-        with:
-          name: hogehoge
-          env: qas
-          dry_run: false
+    uses: kdysk000/github_actions_samples/.github/workflows/inputs_sample.yml@main
+    with:
+      name: hogehoge
+      env: qas
+      dry_run: false
