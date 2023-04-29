@@ -1,0 +1,35 @@
+name: Inputs Sample
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: '名前'
+        required: true
+        default: 'hoge'
+      env:
+        description: '環境'
+        required: true
+        type: choice
+        options:
+          - "dev"
+          - "qas"
+          - "prd"
+      dry_run:
+        description: 'ドライランモード'
+        required: true
+        type: boolean
+
+jobs:
+  input-sample:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get inputs
+        run: |
+          echo name is ${{ github.event.inputs.name }}
+          echo env is ${{ github.event.inputs.env }}
+          if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then
+            echo dry_run mode.
+          else
+            echo normal mode.
+          fi
+
