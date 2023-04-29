@@ -1,0 +1,11 @@
+name: Call other workflow
+on:
+  workflow_dispatch:
+
+jobs:
+  echo-input:
+    uses: .github/workflows/inputs_sample.yml
+    with:
+      name: hogehoge
+      env: qas
+      dry_run: false

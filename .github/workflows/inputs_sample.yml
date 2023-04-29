@@ -1,5 +1,6 @@
 name: Inputs Sample
 on:
+  #マニュアル実行
   workflow_dispatch:
     inputs:
       name:
@@ -10,6 +11,23 @@ on:
         description: '環境'
         required: true
         type: choice
+        default: 'dev'
+      dry_run:
+        description: 'ドライランモード'
+        required: true
+        type: boolean
+
+  #別のワークフローから実行
+  workflow_call:
+    inputs:
+      name:
+        description: '名前'
+        required: true
+        default: 'hoge'
+      env:
+        description: '環境'
+        required: true
+        type: string
         options:
           - "dev"
           - "qas"
