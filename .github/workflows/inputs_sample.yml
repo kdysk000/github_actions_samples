@@ -28,10 +28,6 @@ on:
         description: '環境'
         required: true
         type: string
-        options:
-          - "dev"
-          - "qas"
-          - "prd"
       dry_run:
         description: 'ドライランモード'
         required: true
