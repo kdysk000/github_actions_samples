@@ -40,3 +40,5 @@ jobs:
       - name: Exec ls command
         run: |
           ls -al
+          cd another_repo
+          ls -al
