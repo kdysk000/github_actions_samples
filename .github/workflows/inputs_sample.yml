@@ -41,7 +41,9 @@ jobs:
       - name: Get inputs
         run: |
           echo name is ${{ github.event.inputs.name }}
+          echo name is ${{ inputs.name }}
           echo env is ${{ github.event.inputs.env }}
+          echo env is ${{ inputs.env }}
           if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then
             echo dry_run mode.
           else
