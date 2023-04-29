@@ -26,3 +26,17 @@ jobs:
           ls -al
           cd .github/workflows/
           ls -al
+
+  checkout-other-repository:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get golang
+        uses: actions/checkout@v2
+        with:
+          repository: golang/go
+          path: another_repo
+          ref: master
+
+      - name: Exec ls command
+        run: |
+          ls -al
