@@ -6,6 +6,8 @@ on:
         description: 'input your name.'
         default: 'hoge'
         required: true
+    env:
+      TEST1: ${{secrets.SECRET_TEST}}  #secretの取得. TEST1のスコープは全体
 
 jobs:
   echo-input:
@@ -33,12 +35,22 @@ jobs:
       - name: Get golang
         uses: actions/checkout@v2
         with:
-          repository: golang/go
-          path: another_repo
-          ref: master
+          repository: golang/go  #チェックアウトするレポジトリ(ここではhttps://github.com/golang/goをチェックアウト)
+          path: another_repo     #どこにチェックアウトするか
+          ref: master            #レポジトリのブランチ
 
       - name: Exec ls command
         run: |
           ls -al
           cd another_repo
           ls -al
+
+  get-secret:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get secret
+        env:
+          TEST2: ${{secrets.SECRET_TEST}}  #secretの取得. TEST2のスコープはこのジョブ
+        run: |
+          echo "TEST1 is ${{ $TEST1}}"
+          echo "TEST2 is ${{ $TEST2}}"
