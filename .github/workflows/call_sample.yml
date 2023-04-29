@@ -4,7 +4,7 @@ on:
 
 jobs:
   call-workflow:
-    uses: .github/workflows/inputs_sample.yml@main
+    uses: ./.github/workflows/inputs_sample.yml@main
     with:
       name: hogehoge
       env: qas
