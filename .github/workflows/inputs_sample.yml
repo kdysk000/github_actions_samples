@@ -23,6 +23,7 @@ on:
       name:
         description: '名前'
         required: true
+        type: string
         default: 'hoge'
       env:
         description: '環境'
