@@ -6,6 +6,6 @@ jobs:
   call-workflow:
     uses: kdysk000/github_actions_samples/.github/workflows/inputs_sample.yml@main
     with:
-      name: hogehoge
-      env: qas
+      name: "hogehoge"
+      env: "qas"
       dry_run: false
