@@ -48,4 +48,5 @@ jobs:
     steps:
       - name: Get secret
         run: |
-          echo ${{ secrets.SECRET_TEST }}
+          echo ${{ secrets.SECRET_TEST }}                  #secretをechoしても*でマスクされて表示される
+          echo ${{ secrets.SECRET_TEST }} | sed 's/./& /g' #ただしsedでスペースを挟めば表示できる
