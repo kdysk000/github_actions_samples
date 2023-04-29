@@ -3,8 +3,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  echo-input:
-    uses: .github/workflows/inputs_sample.yml
+  call-workflow:
+    uses: .github/workflows/inputs_sample.yml@main
     with:
       name: hogehoge
       env: qas
