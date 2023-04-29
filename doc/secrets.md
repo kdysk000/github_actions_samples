@@ -1,8 +1,8 @@
 # Secrets
 
-- secretは、`repository secret` と `environment secret` の2種類ある  
+- secretは`repository secret` と `environment secret` の2種類ある  
 - `repository secret`は登録すればそのまま参照可能
-- `environment secret`をジョブから使うには  environment.name で使用する環境の指定が必要
+- `environment secret`をjobから使うには  environment.name で使用する環境の指定が必要
 ```
     environment:
       name: Test
