@@ -12,6 +12,10 @@ on:
         required: true
         type: choice
         default: 'dev'
+        options:
+          - "dev"
+          - "stg"
+          - "prd"
       dry_run:
         description: 'ドライランモード'
         required: true
