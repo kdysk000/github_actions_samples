@@ -5,11 +5,11 @@ on: repository_dispatch
 #以下のようにAPI実行することでこのworkflowが実行される
 # curl -X POST https://api.github.com/repos/:owner/:repo/dispatches \
 #   -H 'Accept: application/vnd.github.everest-preview+json' \
-#   -u $your_user:$your_personal_access_token \
-#   --data '{"event_type": "$your_event", "client_payload": { "message": "hello world." }}'
+#   -u user_name:personal_access_token \
+#   --data '{"event_type": "your_event", "client_payload": { "message": "hello world" }}'
 
 jobs:
-  test:
+  repo-dispatch:
     runs-on: ubuntu-latest
     steps:
       - name: Event Information
