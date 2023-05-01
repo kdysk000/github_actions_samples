@@ -1,20 +1,8 @@
-name: Manual Workflow Sample 1
+name: Checkout Sample
 on:
   workflow_dispatch:
-    inputs:
-      name:
-        description: 'input your name.'
-        default: 'hoge'
-        required: true
 
 jobs:
-  echo-input:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Get name
-        run: |
-          echo ${{ github.event.inputs.name }}
-
   checkout-and-ls:
     runs-on: ubuntu-latest
     steps:
@@ -42,11 +30,3 @@ jobs:
           ls -al
           cd another_repo
           ls -al
-
-  get-secret:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Get secret
-        run: |
-          echo ${{ secrets.SECRET_TEST }}                  #secretをechoしても*でマスクされて表示される
-          echo ${{ secrets.SECRET_TEST }} | sed 's/./& /g' #ただしsedでスペースを挟めば表示できる
