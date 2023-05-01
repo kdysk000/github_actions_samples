@@ -1,7 +1,7 @@
 # Environments
 
 ## 新規作成
-github の project の settings > Environments を選択し、`New Environment`ボタンを押下
+github の project の settings > Environments を選択し、`New environment`ボタンを押下
 
 | ![Add](../image/environment_1.jpg)|
 |:--|
