@@ -1,7 +1,7 @@
 # act
 
 ## actとは
-GitHub Actions をローカルで実行するコマンドツール
+GitHub Actions をローカルで実行するコマンドツール  
 利用するには Docker が必要
 
 ## インストール
