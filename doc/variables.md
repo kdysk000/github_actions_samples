@@ -19,6 +19,11 @@ github の project の settings > Secrets and variables > Actions > New reposito
 |:--|
 <br/>
 
+## 登録 (organization variables)
+organizationの Settings > Security > Secrets and variables > Actions を開き、  
+New organization variable ボタンから  
+<br/>
+
 ## 参照
 actionからは `${{ vars.<変数名> }}` で参照することができる  
 
