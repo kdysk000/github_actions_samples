@@ -8,30 +8,27 @@ variableは`Organization variables` と `repository secret` と `environment sec
 |  Repository variables  |  レポジトリ内の全てのワークフローから参照可能  |  レポジトリ全体で利用する値  |
 |  Environments variables  |  レポジトリ内の全てのワークフローが特定環境用に実行される際に参照可能  |  レポジトリで定義した環境によって値を変える  |
 
-## 登録 (repository secret)
-github の project の settings > Secrets and variavles > Actions に遷移する
+## 登録 (repository variables)
+github の project の settings > Secrets and variables > Actions > New repository variable ボタン
 
-| ![setting](../image/secret_1.jpg)|
+| ![setting](../image/variable_1.jpg)|
 |:--|
 <br/>
 
-`New repository secret`ボタンから secretを登録する
-
-| ![New repository secret](../image/secret_2.jpg)|
+| ![New repository secret](../image/variable_2.jpg)|
 |:--|
 <br/>
 
-## 参照 (repository secret)
-actionからは `${{ secrets.<シークレット名> }}` で参照することができる  
+## 参照
+actionからは `${{ vars.<シークレット名> }}` で参照することができる  
 
 例：
 ```
 jobs:
-  get-secret:
+  get-variable:
     runs-on: ubuntu-latest
     steps:
-      - name: Get secret
+      - name: Get variable
         run: |
-          echo ${{ secrets.SECRET_TEST }}                  #secretをechoしても*でマスクされて表示される
-          echo ${{ secrets.SECRET_TEST }} | sed 's/./& /g' #ただしsedでスペースを挟めば表示できる
+          echo ${{ vars.myvar }}
 ```
