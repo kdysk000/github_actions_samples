@@ -20,7 +20,7 @@ github の project の settings > Secrets and variables > Actions > New reposito
 <br/>
 
 ## 参照
-actionからは `${{ vars.<シークレット名> }}` で参照することができる  
+actionからは `${{ vars.<変数名> }}` で参照することができる  
 
 例：
 ```
