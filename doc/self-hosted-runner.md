@@ -1,7 +1,7 @@
 # セルフホステッドランナー
 ## 導入手順
 リポジトリの Settings > Actions > Runners > New self-hosted runner
-| ![Add](../image/self-hosted-runnner_1.jpg)|
+| ![Add](../image/self-hosted-runner_1.jpg)|
 |:--|
 <br/>
 
