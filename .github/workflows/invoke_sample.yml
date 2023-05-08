@@ -1,0 +1,15 @@
+name: Invoke other workflow
+on:
+  workflow_dispatch:
+
+jobs:
+  invoke-workflow:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Invoke workflow
+      uses: benc-uk/workflow-dispatch@v1
+      with:
+        workflow: Inputs Sample
+        inputs: '{ "name": "hogehoge", "env": "qas", "dry_run": false }'
+
+
