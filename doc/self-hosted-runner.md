@@ -5,5 +5,5 @@
 |:--|
 <br/>
 
-## secret と variable の登録
+## YAMLでの指定
 GitHub Actions の YAML には `runs-on: self-hosted` を指定
