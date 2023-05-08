@@ -9,7 +9,7 @@ jobs:
     - name: Invoke workflow
       uses: benc-uk/workflow-dispatch@v1
       with:
-        workflow: Inputs Sample
-        inputs: '{ "name": "hogehoge", "env": "qas", "dry_run": false }'
+        workflow: Checkout Sample
+#        inputs: '{ "xxx": "xxx" }'  呼び出すワークフローにinputがある場合
 
 
