@@ -17,7 +17,7 @@ jobs:
           echo "test2"
 
   job3:
-    if: ${{ needs.job2.result }} = "success"
+    if: ${{ success() }}  #job2が成功した時のみ実行
     needs: job2
     runs-on: ubuntu-latest
     steps:
@@ -25,7 +25,7 @@ jobs:
           echo "test3"
 
   job4:
-    if: ${{ needs.job2.result }} = "success"
+    if: ${{ success() }}  #job2が成功した時のみ実行
     needs: job2
     runs-on: ubuntu-latest
     steps:
@@ -40,7 +40,7 @@ jobs:
           echo "test5"
           exit 1
 
-  job6:
+  job6:  #job5でexit 1しているためこのジョブは実行されない
     if: ${{ success() }}
     needs: job5
     runs-on: ubuntu-latest
@@ -48,7 +48,7 @@ jobs:
       - run: |
           echo "test6"
 
-  job7:
+  job7:  #こちらは実行される
     if: ${{ failure() }}
     needs: job5
     runs-on: ubuntu-latest
