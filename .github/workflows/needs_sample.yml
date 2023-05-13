@@ -1,0 +1,42 @@
+name: Needs Sample
+on:
+  workflow_dispatch:
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    defaults:
+      run: |
+        echo "test1"
+
+  job2:
+    needs: job1
+    runs-on: ubuntu-latest
+    defaults:
+      run: |
+        echo "test2"
+
+  job3:
+    needs: job2
+    runs-on: ubuntu-latest
+    if: "${{ needs.job2.result }}" = "success"
+    defaults:
+      run: |
+        echo "test3"
+
+  job4:
+    needs: job2
+    runs-on: ubuntu-latest
+    if: "${{ needs.job2.result }}" = "success"
+    defaults:
+      run: |
+        echo "test4"
+
+  job5:
+    needs: [Build3, Build4]
+    runs-on: ubuntu-latest
+    defaults:
+      run: |
+        echo "test5"
+
+
