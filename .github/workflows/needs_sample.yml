@@ -38,5 +38,22 @@ jobs:
     steps:
       - run: |
           echo "test5"
+          exit 1
+
+  job6:
+    if: ${{ success() }}
+    needs: job5
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "test6"
+
+  job7:
+    if: ${{ failure() }}
+    needs: job5
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "test7"
 
 
