@@ -1,3 +1,6 @@
+# workflow_run用の手動ワークフロー
+# このワークフロー完了をトリガーにworkflow-run_sample2.ymlが実行される
+
 name: Run Sample 1
 
 on:
