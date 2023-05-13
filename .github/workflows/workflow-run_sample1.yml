@@ -1,0 +1,27 @@
+name: Run Sample 1
+
+on:
+  workflow_dispatch:
+    inputs:
+      ret:
+        description: 'success or failure'
+        required: true
+        type: choice
+        default: 'success'
+        options:
+          - "success"
+          - "failure"
+
+jobs:
+  run-sample-1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run Success
+        run: |
+          if [ "${{ inputs.ret }}" = "success" ]; then
+            echo "success"
+            exit 0
+          else
+            echo "failure"
+            exit 1
+          fi

@@ -1,0 +1,23 @@
+name: Run Sample 2
+
+on:
+  workflow_run:
+    workflows: [Run Sample 1]
+    types:
+      - completed
+
+jobs:
+  on-success:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    steps:
+      - name: success
+        run: |
+          echo "success"
+  on-failure:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'failure' }}
+    steps:
+      - name: failure
+        run: |
+          echo "failure"
