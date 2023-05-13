@@ -5,38 +5,38 @@ on:
 jobs:
   job1:
     runs-on: ubuntu-latest
-    defaults:
-      run: |
-        echo "test1"
+    steps:
+      - run: |
+          echo "test1"
 
   job2:
     needs: job1
     runs-on: ubuntu-latest
-    defaults:
-      run: |
-        echo "test2"
+    steps:
+      - run: |
+          echo "test2"
 
   job3:
+    if: ${{ needs.job2.result }} = "success"
     needs: job2
     runs-on: ubuntu-latest
-    if: "${{ needs.job2.result }}" = "success"
-    defaults:
-      run: |
-        echo "test3"
+    steps:
+      - run: |
+          echo "test3"
 
   job4:
+    if: ${{ needs.job2.result }} = "success"
     needs: job2
     runs-on: ubuntu-latest
-    if: "${{ needs.job2.result }}" = "success"
-    defaults:
-      run: |
-        echo "test4"
+    steps:
+      - run: |
+          echo "test4"
 
   job5:
-    needs: [Build3, Build4]
+    needs: [job3, job4]
     runs-on: ubuntu-latest
-    defaults:
-      run: |
-        echo "test5"
+    steps:
+      - run: |
+          echo "test5"
 
 
