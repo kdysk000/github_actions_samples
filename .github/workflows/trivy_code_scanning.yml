@@ -5,7 +5,7 @@ on:
       - master
   pull_request:
 jobs:
-    scan-and-upload:
+  scan-and-upload:
     name: Scan and Uplaod
     runs-on: ubuntu-latest
     steps:
