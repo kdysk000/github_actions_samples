@@ -25,6 +25,6 @@ GitHub リポジトリ内のコードを分析して、セキュリティの脆�
 分析によって特定されたすべての問題はGitHubに表示される  
 https://docs.github.com/ja/code-security/code-scanning/automatically-scanning-your-code-for-vulnerabilities-and-errors/about-code-scanning
 
-SARIF 形式をサポート  
+trivyを使用でき、SARIF 形式をサポートしている  
 注意点としてプライベートリポジトリでCode Scanningを実行するには GitHub Advanced Securityのライセンスが必要  
 パブリックリポジトリでは無料で使用できる
