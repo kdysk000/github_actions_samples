@@ -25,3 +25,10 @@ jobs:
         uses: github/codeql-action/upload-sarif@v2
         with:
           sarif_file: 'trivy-results.sarif'
+
+# ファイルをartifactsに保存する場合 
+#      - name: Upload Trivy scan results to artifacts
+#        uses: actions/upload-artifact@v2
+#        with:
+#          name: trivy-results-sarif
+#          path: ./trivy-results.sarif
